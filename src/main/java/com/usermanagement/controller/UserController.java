@@ -18,6 +18,7 @@ import java.util.List;
 public class UserController {
 
     private static final Logger LOGGER = LogManager.getLogger(UserController.class);
+
     @Autowired
     private UserService userService;
 
@@ -65,7 +66,7 @@ public class UserController {
         return response;
     }
 
-    //Task 10
+    //Task 10 , 11
     @PostMapping("/updateMultipleUser")
     public ResponseEntity updateMultipleUser(@RequestBody List<User> userList) throws Exception {
         LOGGER.info("Received updateMultipleUser request");

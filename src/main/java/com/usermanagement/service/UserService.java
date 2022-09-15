@@ -132,7 +132,7 @@ public class UserService {
     }
 
     private boolean validateUserRole(User user) {
-        if (user.getRole().getId() != 3)
+        if (user.getRole().getId() != 3) //simple user
             return true;
         else
             return false;

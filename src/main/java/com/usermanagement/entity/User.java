@@ -44,7 +44,7 @@ public class User implements Serializable {
 
 
     @JsonIgnore
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)//self relation with user
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)//self relation with user
     @JoinColumn(name = "created_by")
     private User createdBy;
 

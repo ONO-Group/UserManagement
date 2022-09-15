@@ -14,7 +14,7 @@ public class UserManagementApplication {
           final Logger LOGGER = LogManager.getLogger(UserController.class);
 
           LOGGER.info("***** Service has started *****");
-          
+
         SpringApplication.run(UserManagementApplication.class, args);
 
     }
