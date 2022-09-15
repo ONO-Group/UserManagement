@@ -8,12 +8,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
-public class SignUpApplication {
+public class UserManagementApplication {
 
     public static void main(String[] args) {
           final Logger LOGGER = LogManager.getLogger(UserController.class);
+
           LOGGER.info("***** Service has started *****");
-        SpringApplication.run(SignUpApplication.class, args);
+          
+        SpringApplication.run(UserManagementApplication.class, args);
 
     }
 

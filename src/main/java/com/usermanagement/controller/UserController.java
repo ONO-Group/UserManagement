@@ -22,12 +22,14 @@ public class UserController {
     private UserService userService;
 
 
-    //post mapping for password encryption
+    //Task 1
     @PostMapping({"createUser", "signUp"})
     public ResponseEntity create(@RequestBody User user, @RequestParam Integer roleId, @RequestParam Integer createdBy) throws Exception {
         LOGGER.info("Received crate user request");
 
         ResponseEntity<DefaultResponse> response;
+
+        //bonus validation check
         if (Util.ValidateSigUpRequest(user, roleId, createdBy))
             response = userService.create(user, roleId, createdBy);
         else
@@ -36,7 +38,7 @@ public class UserController {
     }
 
 
-    //login form through params
+    //Task 5 Login call
     @PostMapping("/login")
     public ResponseEntity Login(@RequestBody User request) throws Exception {
         LOGGER.info("Received login request");
@@ -45,12 +47,31 @@ public class UserController {
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
 
+    //Task 8
     @GetMapping("/getAllUsers")
     public ResponseEntity<List> Login(@RequestParam Integer userId) throws Exception {
         LOGGER.info("Received getAllUsers request");
 
         List<User> list = userService.getAllUsers(userId);
         return new ResponseEntity<List>(list, HttpStatus.OK);
+    }
+
+    //Task 9
+    @PostMapping("/updateSingleUser")
+    public ResponseEntity updateSingleUser(@RequestBody User request) throws Exception {
+        LOGGER.info("Received updateSingleUser request");
+
+        ResponseEntity<DefaultResponse> response = userService.updateSingleUser(request);
+        return response;
+    }
+
+    //Task 10
+    @PostMapping("/updateMultipleUser")
+    public ResponseEntity updateMultipleUser(@RequestBody List<User> userList) throws Exception {
+        LOGGER.info("Received updateMultipleUser request");
+
+        ResponseEntity<DefaultResponse> response = userService.updateMultipleUser(userList);
+        return response;
     }
 
 }
