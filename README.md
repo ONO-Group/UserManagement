@@ -1,11 +1,11 @@
 # UserManagement
 Sprin boot simple crud and role based sample project.
 
-#Scripts
+```#Scripts```
 
-SELECT * FROM db_user_management.role;
+```SELECT * FROM db_user_management.role;```
 
-SELECT * FROM db_user_management.user;
+```SELECT * FROM db_user_management.user;```
 
 
 
