@@ -2,6 +2,7 @@ package com.usermanagement.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jdk.nashorn.internal.objects.annotations.Getter;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,7 +25,7 @@ public class Role implements Serializable {
     private int id;
     @Column(name = "name")
     private String name;
-    @Column(name = "description")
+    @Column(name = "description")  
     private String description; 
 
 }
